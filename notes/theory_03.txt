@@ -1,0 +1,72 @@
+JSX
+It is a syntax extension of JavaScript. It comes with full power of JavaScript. It is not html or a markup language. It produces React elements. Instead of putting markup and logic in separate files JSX promotes combining markup and logic together in components. React does not require JSX but is makes developer's work easy.
+
+Super powers of JSX
+It makes development easy and we can do markup and logic at a single place in JavaScript files and it also allows React to show more useful error and warning messages. We can also write any JavaScript logic inside JSX by using curly braces {}. JSX also produces shorter codes as compared to normal React code.
+
+
+Role of type attribute in script tag? what options can i use there?
+
+The type attribute in the <script> tag specifies the type of scripting language used within the script block. Historically, it was commonly used to specify the scripting language being used, but in modern HTML, the type attribute is often omitted for JavaScript as it defaults to text/javascript.
+
+some of the options for the type attribute:
+
+text/javascript: This is the default value for the type attribute. It specifies that the content inside the <script> tags is JavaScript.
+
+module: This attribute indicates that the script should be treated as a JavaScript module. It allows the use of modern JavaScript features like import and export statements.
+
+text/ecmascript: It specifies that the content inside the <script> tags is ECMAScript (an older name for JavaScript standard). This was used in earlier versions of HTML.
+
+text/html: This attribute specifies that the content inside the <script> tags is HTML code. It's a less common use case and generally not recommended.
+
+In modern web development, when using JavaScript, the type attribute is often omitted for regular scripts (text/javascript) or specified as module for JavaScript modules to leverage their functionality and scope isolation. 
+
+For example:
+<script src="app.js" type="module"></script>
+This indicates that app.js should be treated as a JavaScript module. If the type attribute is omitted, it defaults to text/javascript.
+
+{TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in jsx
+
+In JSX, the differences between `{TitleComponent}`, `{<TitleComponent/>}`, and `{<TitleComponent></TitleComponent>}` are related to how components are represented and used within JSX.
+
+1. **`{TitleComponent}`**: This syntax typically represents the reference to a component. It doesn't render the component itself but refers to it for later use. You'd typically use this when passing a component as a prop or assigning it to a variable.
+
+    ```javascript
+    const MyComponent = () => {
+      const TitleComponent = <h1>Hello</h1>; // Reference to a component
+      return (
+        <div>
+          {TitleComponent}
+          {/* Other JSX */}
+        </div>
+      );
+    };
+    ```
+
+2. **`{<TitleComponent/>}`**: This syntax directly renders the `TitleComponent`. It's an example of using a self-closing tag in JSX to render the component without passing any props.
+
+    ```javascript
+    const MyComponent = () => {
+      return (
+        <div>
+          {<TitleComponent/>}
+          {/* Other JSX */}
+        </div>
+      );
+    };
+    ```
+
+3. **`{<TitleComponent></TitleComponent>}`**: This syntax also renders the `TitleComponent`. Here, the component is enclosed between opening and closing tags, similar to how HTML elements are written. This form allows for passing children to the `TitleComponent`.
+
+    ```javascript
+    const MyComponent = () => {
+      return (
+        <div>
+          {<TitleComponent></TitleComponent>}
+          {/* Other JSX */}
+        </div>
+      );
+    };
+    ```
+
+All three render the `TitleComponent`, but they might be used in different scenarios based on whether you want to reference the component, render it directly, or provide it with children in the JSX structure. Typically, `{<TitleComponent/>}` or `{<TitleComponent></TitleComponent>}` is used to render a component directly in JSX.
