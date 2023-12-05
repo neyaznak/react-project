@@ -27,11 +27,11 @@ This indicates that app.js should be treated as a JavaScript module. If the type
 
 {TitleComponent} vs {<TitleComponent/>} vs {<TitleComponent></TitleComponent>} in jsx
 
-In JSX, the differences between `{TitleComponent}`, `{<TitleComponent/>}`, and `{<TitleComponent></TitleComponent>}` are related to how components are represented and used within JSX.
+In JSX, the differences between {TitleComponent}, {<TitleComponent/>}, and {<TitleComponent></TitleComponent>} are related to how components are represented and used within JSX.
 
-1. **`{TitleComponent}`**: This syntax typically represents the reference to a component. It doesn't render the component itself but refers to it for later use. You'd typically use this when passing a component as a prop or assigning it to a variable.
+1. {TitleComponent}: This syntax typically represents the reference to a component. It doesn't render the component itself but refers to it for later use. You'd typically use this when passing a component as a prop or assigning it to a variable.
 
-    ```javascript
+    
     const MyComponent = () => {
       const TitleComponent = <h1>Hello</h1>; // Reference to a component
       return (
@@ -41,11 +41,11 @@ In JSX, the differences between `{TitleComponent}`, `{<TitleComponent/>}`, and `
         </div>
       );
     };
-    ```
+    
 
-2. **`{<TitleComponent/>}`**: This syntax directly renders the `TitleComponent`. It's an example of using a self-closing tag in JSX to render the component without passing any props.
+2. {<TitleComponent/>}: This syntax directly renders the `TitleComponent`. It's an example of using a self-closing tag in JSX to render the component without passing any props.
 
-    ```javascript
+    
     const MyComponent = () => {
       return (
         <div>
@@ -54,11 +54,11 @@ In JSX, the differences between `{TitleComponent}`, `{<TitleComponent/>}`, and `
         </div>
       );
     };
-    ```
+    
 
-3. **`{<TitleComponent></TitleComponent>}`**: This syntax also renders the `TitleComponent`. Here, the component is enclosed between opening and closing tags, similar to how HTML elements are written. This form allows for passing children to the `TitleComponent`.
+3.{<TitleComponent></TitleComponent>}: This syntax also renders the TitleComponent. Here, the component is enclosed between opening and closing tags, similar to how HTML elements are written. This form allows for passing children to the TitleComponent.
 
-    ```javascript
+    javascript
     const MyComponent = () => {
       return (
         <div>
@@ -67,6 +67,5 @@ In JSX, the differences between `{TitleComponent}`, `{<TitleComponent/>}`, and `
         </div>
       );
     };
-    ```
 
-All three render the `TitleComponent`, but they might be used in different scenarios based on whether you want to reference the component, render it directly, or provide it with children in the JSX structure. Typically, `{<TitleComponent/>}` or `{<TitleComponent></TitleComponent>}` is used to render a component directly in JSX.
+All three render the TitleComponent, but they might be used in different scenarios based on whether you want to reference the component, render it directly, or provide it with children in the JSX structure. Typically, {<TitleComponent/>} or {<TitleComponent></TitleComponent>} is used to render a component directly in JSX.
