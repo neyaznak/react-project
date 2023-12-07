@@ -1,6 +1,6 @@
 import RestaurantCard from "../components/RestaurantCard";
-import { useEffect, useState } from "react";
-import Shimmer from "./Shimmer";
+import resList from "../src/utils/mockData";
+import { useState } from "react";
 
 const Body = () => {
     //Local State Variable - Super Powerful Variable
@@ -30,32 +30,6 @@ const Body = () => {
     ) : (
       <div className="body">
         <div className="filter">
-          <div className="search">
-            <input
-              type="text"
-              className="search-box"
-              value={searchText}
-              onChange={(e) => {
-                setSearchText(e.target.value);
-              }}
-            />
-            <button
-              onClick={() => {
-                //Filter the retstaurant cards and update the UI
-                //searchText
-                console.log(searchText);
-
-                const filteredRestaurant = listOfRestaurants.filter((res) =>
-                  res.info.name.toLowerCase().includes(searchText.toLowerCase())
-                );
-
-                setFilteredRestaurant(filteredRestaurant);
-
-              }}
-            >
-              Search
-            </button>
-          </div>
           <button
             className="filter-btn"
             onClick={() => {
@@ -69,7 +43,7 @@ const Body = () => {
           </button>
         </div>
         <div className="res-container">
-          {filteredRestaurant.map((restaurant) => (
+          {listOfRestaurants.map((restaurant) => (
             <RestaurantCard key={restaurant.info.id} resData={restaurant} />
           ))}
         </div>
